@@ -35,8 +35,7 @@ $routes->get("/login", "Auth\LoginController::index");
 $routes->post("/login/proses_login", "Auth\LoginController::proses_login");
 
 $routes->get("/dashboard", "AppController::index", ["filter" => "autentikasi"]);
-$routes->get("/logout", "Auth\LoginController::logout");
-$routes->get("/layouts", "AppController::layouts");
+$routes->get("/logout", "Auth\LoginController::logout", ["filter" => "autentikasi"]);
 // $routes
 /*
  * --------------------------------------------------------------------
