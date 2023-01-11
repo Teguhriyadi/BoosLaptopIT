@@ -8,6 +8,11 @@ class AppController extends BaseController
 {
     public function index()
     {
-        echo "hamdan";
+        return view("dashboard");
+    }
+
+    public function layouts()
+    {
+        return view("layouts/main");
     }
 }
