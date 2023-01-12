@@ -36,10 +36,18 @@ $routes->post("/login/proses_login", "Auth\LoginController::proses_login");
 
 $routes->get("/dashboard", "AppController::index", ["filter" => "autentikasi"]);
 
+// Data COA
 $routes->get("coa", "Master\CoaController::index", ["filter" => "autentikasi"]);
 $routes->post("coa/store", "Master\CoaController::store", ["filter" => "autentikasi"]);
 $routes->post("coa/(:segment)", "Master\CoaController::edit/$1");
 $routes->post("coa/(:segment)/hapus", "Master\CoaController::destroy/$1");
+
+// Data Beban Operasional
+$routes->get("beban_operasional", "Master\BebanOperasionalController::index", ["filter" => "autentikasi"]);
+$routes->post("beban_operasional/store", "Master\BebanOperasionalController::store", ["filter" => "autentikasi"]);
+$routes->post("beban_operasional/(:segment)", "Master\BebanOperasionalController::edit/$1", ["filter" => "autentikasi"]);
+$routes->post("beban_operasional/(:segment)/hapus", "Master\BebanOperasionalController::destroy/$1", ["filter" => "autentikasi"]);
+
 $routes->get("/logout", "Auth\LoginController::logout", ["filter" => "autentikasi"]);
 // $routes
 /*

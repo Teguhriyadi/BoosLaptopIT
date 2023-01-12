@@ -23,6 +23,9 @@
                         <a href="<?= base_url(); ?>/coa">Coa</a>
                     </li>
                     <li>
+                        <a href="<?= base_url(); ?>/beban_operasional">Beban Operasional</a>
+                    </li>
+                    <li>
                         <a href="cards.html">Cards</a>
                     </li>
                 </ul>

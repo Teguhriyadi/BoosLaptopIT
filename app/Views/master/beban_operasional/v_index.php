@@ -2,7 +2,7 @@
 
 <?= $this->section("title"); ?>
 
-Coa
+Beban Operasional
 
 <?= $this->endSection(); ?>
 
@@ -19,7 +19,7 @@ Coa
         <a href="<?= base_url(); ?>/dashboard">Dashboard</a>
     </li>
     <li class="breadcrumb-item active">
-        Coa
+        Beban Operasional
     </li>
 </ol>
 <div class="row">
@@ -35,8 +35,8 @@ Coa
         <?php endif; ?>
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Data COA
-                <a class="btn btn-primary btn-sm text-white pull-right" data-toggle="modal" data-target="#tambahCoa">
+                <i class="fa fa-table"></i> Data Beban Operasional
+                <a class="btn btn-primary btn-sm text-white pull-right" data-toggle="modal" data-target="#tambahBebanOperasional">
                     <i class="fa fa-fw fa-plus"></i>
                     Tambah
                 </a>
@@ -47,26 +47,26 @@ Coa
                         <thead>
                             <tr>
                                 <th class="text-center">No.</th>
-                                <th class="text-center">Kode COA</th>
-                                <th>Nama COA</th>
-                                <th>Header COA</th>
+                                <th class="text-center">ID Beban</th>
+                                <th>Keterangan</th>
+                                <th class="text-center">Nominal</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 0; ?>
-                            <?php foreach ($coa as $c) : ?>
+                            <?php foreach ($beban_operasional as $c) : ?>
                                 <tr>
                                     <td class="text-center"><?= ++$no ?>.</td>
-                                    <td class="text-center"><?= $c["kode_coa"] ?></td>
-                                    <td><?= $c["nama_coa"] ?></td>
-                                    <td><?= $c["header_coa"] ?></td>
+                                    <td class="text-center"><?= $c["id_beban"] ?></td>
+                                    <td><?= $c["keterangan"] ?></td>
+                                    <td class="text-center">Rp. <?= number_format($c["nominal"]) ?> </td>
                                     <td class="text-center">
-                                        <a class="btn btn-warning btn-sm text-white" data-toggle="modal" data-target="#editCoa-<?= $c["kode_coa"]; ?>">
+                                        <a class="btn btn-warning btn-sm text-white" data-toggle="modal" data-target="#editCoa-<?= $c["id_beban"]; ?>">
                                             <i class="fa fa-fw fa-edit"></i>
                                             Edit
                                         </a>
-                                        <a class="btn btn-danger btn-sm text-white" data-toggle="modal" data-target="#hapusCoa-<?= $c["kode_coa"]; ?>">
+                                        <a class="btn btn-danger btn-sm text-white" data-toggle="modal" data-target="#hapusCoa-<?= $c["id_beban"]; ?>">
                                             <i class="fa fa-fw fa-trash"></i>
                                             Hapus
                                         </a>
@@ -82,7 +82,7 @@ Coa
 </div>
 
 <!-- Tambah COA -->
-<div class="modal fade" id="tambahCoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tambahBebanOperasional" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -93,19 +93,19 @@ Coa
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form action="<?= base_url(); ?>/coa/store" method="POST">
+            <form action="<?= base_url(); ?>/beban_operasional/store" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="kode_coa"> Kode COA </label>
-                        <input type="text" class="form-control" name="kode_coa" id="kode_coa" placeholder="Masukkan Kode COA" required>
+                        <label for="id_beban"> ID Beban </label>
+                        <input type="text" class="form-control" name="id_beban" id="id_beban" placeholder="Masukkan ID Beban" required>
                     </div>
                     <div class="form-group">
-                        <label for="nama_coa"> Nama COA </label>
-                        <input type="text" class="form-control" name="nama_coa" id="nama_coa" placeholder="Masukkan Nama COA" required>
+                        <label for="keterangan"> Keterangan </label>
+                        <textarea name="keterangan" class="form-control" id="keterangan" rows="5" placeholder="Masukkan Keterangan" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="header_coa"> Header COA </label>
-                        <input type="text" class="form-control" name="header_coa" id="header_coa" placeholder="Masukkan Header COA" required>
+                        <label for="nominal"> Nominal </label>
+                        <input type="number" class="form-control" name="nominal" id="nominal" placeholder="0" min="1000" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -118,8 +118,8 @@ Coa
 <!-- END -->
 
 <!-- Edit COA -->
-<?php foreach ($coa as $c) : ?>
-    <div class="modal fade" id="editCoa-<?= $c["kode_coa"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php foreach ($beban_operasional as $c) : ?>
+    <div class="modal fade" id="editCoa-<?= $c["id_beban"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -130,19 +130,19 @@ Coa
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form action="<?= base_url(); ?>/coa/<?= $c["kode_coa"]; ?>" method="POST">
+                <form action="<?= base_url(); ?>/beban_operasional/<?= $c["id_beban"]; ?>" method="POST">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="kode_coa"> Kode COA </label>
-                            <input type="text" class="form-control" name="kode_coa" id="kode_coa" placeholder="Masukkan Kode COA" value="<?= $c["kode_coa"]; ?>" readonly required>
+                            <label for="id_beban"> ID Beban </label>
+                            <input type="text" class="form-control" name="id_beban" id="id_beban" placeholder="Masukkan ID Beban" value="<?= $c["id_beban"] ?>" readonly required>
                         </div>
                         <div class="form-group">
-                            <label for="nama_coa"> Nama COA </label>
-                            <input type="text" class="form-control" name="nama_coa" id="nama_coa" placeholder="Masukkan Nama COA" value="<?= $c["nama_coa"]; ?>" required>
+                            <label for="keterangan"> Keterangan </label>
+                            <textarea name="keterangan" class="form-control" id="keterangan" rows="5" placeholder="Masukkan Keterangan" required><?= $c["keterangan"] ?></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="header_coa"> Header COA </label>
-                            <input type="text" class="form-control" name="header_coa" id="header_coa" placeholder="Masukkan Header COA" value="<?= $c["header_coa"]; ?>" required>
+                            <label for="nominal"> Nominal </label>
+                            <input type="number" class="form-control" name="nominal" id="nominal" placeholder="0" min="1000" value="<?= $c["nominal"] ?>" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -156,24 +156,24 @@ Coa
 <!-- END -->
 
 <!-- Hapus COA -->
-<?php foreach ($coa as $c) : ?>
-    <div class="modal fade" id="hapusCoa-<?= $c["kode_coa"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php foreach ($beban_operasional as $c) : ?>
+    <div class="modal fade" id="hapusCoa-<?= $c["id_beban"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        <i class="fa fa-fw fa-trash"></i> Hapus Data
+                        <i class="fa fa-fw fa-pencil"></i> Edit Data
                     </h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form action="<?= base_url(); ?>/coa/<?= $c["kode_coa"]; ?>/hapus" method="POST">
+                <form action="<?= base_url(); ?>/beban_operasional/<?= $c["id_beban"]; ?>/hapus" method="POST">
                     <div class="modal-body">
                         <p>
                             Apakah Anda Yakin Ingin Menghapus Data
                             <strong>
-                                <?= $c["nama_coa"]; ?>
+                                <?= $c["id_beban"]; ?>
                             </strong> ?
                         </p>
                     </div>
