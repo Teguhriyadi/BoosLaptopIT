@@ -35,6 +35,11 @@ $routes->get("/login", "Auth\LoginController::index");
 $routes->post("/login/proses_login", "Auth\LoginController::proses_login");
 
 $routes->get("/dashboard", "AppController::index", ["filter" => "autentikasi"]);
+
+$routes->get("coa", "Master\CoaController::index", ["filter" => "autentikasi"]);
+$routes->post("coa/store", "Master\CoaController::store", ["filter" => "autentikasi"]);
+$routes->post("coa/(:segment)", "Master\CoaController::edit/$1");
+$routes->post("coa/(:segment)/hapus", "Master\CoaController::destroy/$1");
 $routes->get("/logout", "Auth\LoginController::logout", ["filter" => "autentikasi"]);
 // $routes
 /*

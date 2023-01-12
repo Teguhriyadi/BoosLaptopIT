@@ -14,13 +14,13 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">Components</span>
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMaster" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-bars"></i>
+                    <span class="nav-link-text">Master</span>
                 </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents">
+                <ul class="sidenav-second-level collapse" id="collapseMaster">
                     <li>
-                        <a href="navbar.html">Navbar</a>
+                        <a href="<?= base_url(); ?>/coa">Coa</a>
                     </li>
                     <li>
                         <a href="cards.html">Cards</a>

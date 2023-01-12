@@ -12,6 +12,8 @@
 
     <?= $this->include("layouts/components/css/style_css"); ?>
 
+    <?= $this->renderSection("css"); ?>
+
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -59,6 +61,8 @@
         </div>
 
         <?= $this->include("layouts/components/js/style_js") ?>
+
+        <?= $this->renderSection("js"); ?>
 
     </div>
 </body>
