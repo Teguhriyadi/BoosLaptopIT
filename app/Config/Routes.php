@@ -48,6 +48,12 @@ $routes->post("beban_operasional/store", "Master\BebanOperasionalController::sto
 $routes->post("beban_operasional/(:segment)", "Master\BebanOperasionalController::edit/$1", ["filter" => "autentikasi"]);
 $routes->post("beban_operasional/(:segment)/hapus", "Master\BebanOperasionalController::destroy/$1", ["filter" => "autentikasi"]);
 
+// Data Beban Operasional
+$routes->get("bagian_keuangan", "Master\BagianKeuanganController::index", ["filter" => "autentikasi"]);
+$routes->post("bagian_keuangan/store", "Master\BagianKeuanganController::store", ["filter" => "autentikasi"]);
+$routes->post("bagian_keuangan/(:segment)", "Master\BagianKeuanganController::edit/$1", ["filter" => "autentikasi"]);
+$routes->post("bagian_keuangan/(:segment)/hapus", "Master\BagianKeuanganController::destroy/$1", ["filter" => "autentikasi"]);
+
 $routes->get("/logout", "Auth\LoginController::logout", ["filter" => "autentikasi"]);
 // $routes
 /*

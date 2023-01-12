@@ -26,7 +26,7 @@
                         <a href="<?= base_url(); ?>/beban_operasional">Beban Operasional</a>
                     </li>
                     <li>
-                        <a href="cards.html">Cards</a>
+                        <a href="<?= base_url(); ?>/bagian_keuangan">Bagian Keuangan</a>
                     </li>
                 </ul>
             </li>
