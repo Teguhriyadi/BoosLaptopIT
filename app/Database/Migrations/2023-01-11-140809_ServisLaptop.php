@@ -9,6 +9,12 @@ class ServisLaptop extends Migration
     public function up()
     {
         $this->forge->addField([
+            'id' => [
+                'type' => 'int',
+                'constraint' => 11,
+                'unsigned' => true,
+                'auto_increment' => true
+            ],
             'tgl_servis' => [
                 'type' => 'date'
             ],
@@ -22,7 +28,7 @@ class ServisLaptop extends Migration
             ],
         ]);
 
-        $this->forge->addKey('tgl_servis', TRUE);
+        $this->forge->addKey('id', TRUE);
 
         $this->forge->createTable('servis_laptop', TRUE);
     }

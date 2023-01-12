@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Master;
+namespace App\Models\Transaksi;
 
 use CodeIgniter\Model;
 
@@ -8,9 +8,7 @@ class ServisLaptop extends Model
 {
     protected $table            = 'servis_laptop';
 
-    protected $primaryKey       = 'tgl_servis';
-
-    protected $useAutoIncrement = false;
+    protected $primaryKey       = 'id';
 
     protected $allowedFields    = ['tgl_servis', 'part_servis', 'subtotal_servis'];
 }

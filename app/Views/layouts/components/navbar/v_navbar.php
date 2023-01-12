@@ -30,6 +30,17 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseTransaksi" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-bar-chart-o"></i>
+                    <span class="nav-link-text">Transaksi</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseTransaksi">
+                    <li>
+                        <a href="<?= base_url(); ?>/servis_laptop">Servis Laptop</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">

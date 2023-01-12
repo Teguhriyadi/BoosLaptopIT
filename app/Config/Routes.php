@@ -29,7 +29,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', "Auth\LoginController::index");
 
 $routes->get("/login", "Auth\LoginController::index");
 $routes->post("/login/proses_login", "Auth\LoginController::proses_login");
@@ -53,6 +53,12 @@ $routes->get("bagian_keuangan", "Master\BagianKeuanganController::index", ["filt
 $routes->post("bagian_keuangan/store", "Master\BagianKeuanganController::store", ["filter" => "autentikasi"]);
 $routes->post("bagian_keuangan/(:segment)", "Master\BagianKeuanganController::edit/$1", ["filter" => "autentikasi"]);
 $routes->post("bagian_keuangan/(:segment)/hapus", "Master\BagianKeuanganController::destroy/$1", ["filter" => "autentikasi"]);
+
+// Data Servis Laptop
+$routes->get("servis_laptop", "Transaksi\ServisLaptopController::index", ["filter" => "autentikasi"]);
+$routes->post("servis_laptop/store", "Transaksi\ServisLaptopController::store", ["filter" => "autentikasi"]);
+$routes->post("servis_laptop/(:segment)", "Transaksi\ServisLaptopController::edit/$1", ["filter" => "autentikasi"]);
+$routes->post("servis_laptop/(:segment)/hapus", "Transaksi\ServisLaptopController::destroy/$1", ["filter" => "autentikasi"]);
 
 $routes->get("/logout", "Auth\LoginController::logout", ["filter" => "autentikasi"]);
 // $routes
