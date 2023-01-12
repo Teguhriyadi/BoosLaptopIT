@@ -54,6 +54,18 @@ $routes->post("beban_operasional/store", "Master\BebanOperasionalController::sto
 $routes->post("beban_operasional/(:segment)", "Master\BebanOperasionalController::edit/$1", ["filter" => "autentikasi"]);
 $routes->post("beban_operasional/(:segment)/hapus", "Master\BebanOperasionalController::destroy/$1", ["filter" => "autentikasi"]);
 
+// Data Penerimaan Kas
+$routes->get("transaksi/penerimaan_kas", "Transaksi\PenerimaanKasController::index", ["filter" => "autentikasi"]);
+$routes->post("transaksi/penerimaan_kas/store", "Transaksi\PenerimaanKasController::store", ["filter" => "autentikasi"]);
+$routes->post("transaksi/penerimaan_kas/(:segment)", "Transaksi\PenerimaanKasController::edit/$1", ["filter" => "autentikasi"]);
+$routes->post("transaksi/penerimaan_kas/(:segment)/hapus", "Transaksi\PenerimaanKasController::destroy/$1", ["filter" => "autentikasi"]);
+
+// Data Pengeluaran Kas
+$routes->get("transaksi/pengeluaran_kas", "Transaksi\PengeluaranKasController::index", ["filter" => "autentikasi"]);
+$routes->post("transaksi/pengeluaran_kas/store", "Transaksi\PengeluaranKasController::store", ["filter" => "autentikasi"]);
+$routes->post("transaksi/pengeluaran_kas/(:segment)", "Transaksi\PengeluaranKasController::edit/$1", ["filter" => "autentikasi"]);
+$routes->post("transaksi/pengeluaran_kas/(:segment)/hapus", "Transaksi\PengeluaranKasController::destroy/$1", ["filter" => "autentikasi"]);
+
 // Data Beban Operasional
 $routes->get("bagian_keuangan", "Master\BagianKeuanganController::index", ["filter" => "autentikasi"]);
 $routes->post("bagian_keuangan/store", "Master\BagianKeuanganController::store", ["filter" => "autentikasi"]);

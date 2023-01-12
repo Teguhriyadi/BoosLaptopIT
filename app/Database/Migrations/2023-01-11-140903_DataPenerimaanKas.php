@@ -15,12 +15,13 @@ class DataPenerimaanKas extends Migration
                 'unsigned' => true,
                 'auto_increment' => true
             ],
-            'tgl_penerimaan' => [
-                'type' => 'date'
+            'id_servis_laptop' => [
+                'type' => 'int',
+                'constraint' => 11,
             ],
-            'jenis_penerimaan' => [
-                'type' => 'varchar',
-                'constraint' => '100'
+            'subtotal_penerimaan_kas' => [
+                'type' => 'int',
+                'constraint' => 11
             ]
         ]);
 

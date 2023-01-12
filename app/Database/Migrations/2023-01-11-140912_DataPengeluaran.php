@@ -9,26 +9,27 @@ class DataPengeluaran extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_penerimaan' => [
+            'id_pengeluaran_kas' => [
                 'type' => 'varchar',
                 'constraint' => '100',
             ],
-            'tgl_penerimaan' => [
-                'type' => 'date'
+            'id_beban_operasional' => [
+                'type' => 'varchar',
+                'constraint' => '100'
             ],
-            'jenis_penerimaan' => [
+            'subtotal_pengeluaran_kas' => [
                 'type' => 'varchar',
                 'constraint' => '100'
             ]
         ]);
 
-        $this->forge->addKey('id_penerimaan', TRUE);
+        $this->forge->addKey('id_pengeluaran_kas', TRUE);
 
-        $this->forge->createTable('data_pengeluaran', TRUE);
+        $this->forge->createTable('data_pengeluaran_kas', TRUE);
     }
 
     public function down()
     {
-        $this->forge->dropTable('data_pengeluaran');
+        $this->forge->dropTable('data_pengeluaran_kas');
     }
 }

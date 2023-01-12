@@ -29,10 +29,33 @@
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseTransaksi" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-bar-chart-o"></i>
+                    <i class="fa fa-fw fa-money"></i>
                     <span class="nav-link-text">Transaksi</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseTransaksi">
+                    <li>
+                        <a href="<?= base_url(); ?>/jurnal/penerimaan">Jurnal Penerimaan Kas</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url(); ?>/jurnal/pengeluaran">Jurnal Pengeluaran Kas</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url(); ?>/servis_laptop">Servis Laptop</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url(); ?>/transaksi/penerimaan_kas">Penerimaan Kas</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url(); ?>/transaksi/pengeluaran_kas">Pengeluaran Kas</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseLaporan" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-bar-chart-o"></i>
+                    <span class="nav-link-text">Laporan</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseLaporan">
                     <li>
                         <a href="<?= base_url(); ?>/jurnal/penerimaan">Jurnal Penerimaan Kas</a>
                     </li>
