@@ -41,6 +41,12 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User">
+                <a class="nav-link" href="<?= base_url(); ?>/users">
+                    <i class="fa fa-fw fa-users"></i>
+                    <span class="nav-link-text">Users</span>
+                </a>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">

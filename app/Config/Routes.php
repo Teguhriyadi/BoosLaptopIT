@@ -60,6 +60,12 @@ $routes->post("servis_laptop/store", "Transaksi\ServisLaptopController::store", 
 $routes->post("servis_laptop/(:segment)", "Transaksi\ServisLaptopController::edit/$1", ["filter" => "autentikasi"]);
 $routes->post("servis_laptop/(:segment)/hapus", "Transaksi\ServisLaptopController::destroy/$1", ["filter" => "autentikasi"]);
 
+// Data Users
+$routes->get("users", "Akun\UserController::index", ["filter" => "autentikasi"]);
+$routes->post("users/store", "Akun\UserController::store", ["filter" => "autentikasi"]);
+$routes->post("users/(:segment)", "Akun\UserController::edit/$1", ["filter" => "autentikasi"]);
+$routes->post("users/(:segment)/hapus", "Akun\UserController::destroy/$1", ["filter" => "autentikasi"]);
+
 $routes->get("/logout", "Auth\LoginController::logout", ["filter" => "autentikasi"]);
 // $routes
 /*
