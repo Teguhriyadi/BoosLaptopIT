@@ -84,7 +84,7 @@ Dashboard
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-comments"></i>
                         </div>
-                        <div class="mr-5">26 Users!</div>
+                        <div class="mr-5"><?= $count_users ?> Users!</div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="<?= base_url(); ?>/users">
                         <span class="float-left">Lebih Lengkap</span>

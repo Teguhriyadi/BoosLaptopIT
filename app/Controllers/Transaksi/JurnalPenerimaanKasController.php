@@ -1,34 +1,34 @@
 <?php
 
-namespace App\Controllers\Master;
+namespace App\Controllers\Transaksi;
 
 use App\Controllers\BaseController;
-use App\Models\Master\COA;
+use App\Models\Master\Jurnal\Penerimaan;
 
-class CoaController extends BaseController
+class JurnalPenerimaanKasController extends BaseController
 {
-    protected $coa;
+    protected $penerimaan;
     protected $session;
 
     public function __construct()
     {
-        $this->coa = new COA();
+        $this->penerimaan = new Penerimaan();
         $this->session = session();
     }
 
     public function index()
     {
-        $data["coa"] = $this->coa->orderBy("kode_coa", "DESC")->findAll();
+        $data["penerimaan"] = $this->penerimaan->orderBy("kode_coa", "DESC")->findAll();
 
-        return view("master/coa/v_index", $data);
+        return view("transaksi/jurnal/penerimaan/v_index", $data);
     }
 
     public function store()
     {
-        $this->coa->insert([
+        $this->penerimaan->insert([
             "kode_coa" => $this->request->getPost("kode_coa"),
-            "nama_coa" => $this->request->getPost("nama_coa"),
-            "header_coa" => $this->request->getPost("header_coa")
+            "nama" => $this->request->getPost("nama"),
+            "header" => $this->request->getPost("header")
         ]);
 
         $this->session->setFlashdata("pesan", "<strong>Good Job!</strong>, Data Berhasil di Tambahkan");
@@ -38,9 +38,9 @@ class CoaController extends BaseController
 
     public function edit($id)
     {
-        $this->coa->update($id, [
-            "nama_coa" => $this->request->getPost("nama_coa"),
-            "header_coa" => $this->request->getPost("header_coa")
+        $this->penerimaan->update($id, [
+            "nama" => $this->request->getPost("nama"),
+            "header" => $this->request->getPost("header")
         ]);
 
         $this->session->setFlashdata("pesan", "<strong>Good Job!</strong>, Data Berhasil di Simpan");
@@ -50,7 +50,7 @@ class CoaController extends BaseController
 
     public function destroy($id)
     {
-        $this->coa->delete($id);
+        $this->penerimaan->delete($id);
 
         $this->session->setFlashdata("pesan", "<strong>Good Job!</strong>, Data Berhasil di Hapus");
 

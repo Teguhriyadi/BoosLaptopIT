@@ -36,11 +36,17 @@ $routes->post("/login/proses_login", "Auth\LoginController::proses_login");
 
 $routes->get("/dashboard", "AppController::index", ["filter" => "autentikasi"]);
 
-// Data COA
-$routes->get("coa", "Master\CoaController::index", ["filter" => "autentikasi"]);
-$routes->post("coa/store", "Master\CoaController::store", ["filter" => "autentikasi"]);
-$routes->post("coa/(:segment)", "Master\CoaController::edit/$1");
-$routes->post("coa/(:segment)/hapus", "Master\CoaController::destroy/$1");
+// Data Jurnal Penerimaan Kas
+$routes->get("jurnal/penerimaan", "Transaksi\JurnalPenerimaanKasController::index", ["filter" => "autentikasi"]);
+$routes->post("jurnal/penerimaan/store", "Transaksi\JurnalPenerimaanKasController::store", ["filter" => "autentikasi"]);
+$routes->post("jurnal/penerimaan/(:segment)", "Transaksi\JurnalPenerimaanKasController::edit/$1");
+$routes->post("jurnal/penerimaan/(:segment)/hapus", "Transaksi\JurnalPenerimaanKasController::destroy/$1");
+
+// Data Jurnal Pengeluaran Kas
+$routes->get("jurnal/pengeluaran", "Transaksi\JurnalPengeluaranKasController::index", ["filter" => "autentikasi"]);
+$routes->post("jurnal/pengeluaran/store", "Transaksi\JurnalPengeluaranKasController::store", ["filter" => "autentikasi"]);
+$routes->post("jurnal/pengeluaran/(:segment)", "Transaksi\JurnalPengeluaranKasController::edit/$1");
+$routes->post("jurnal/pengeluaran/(:segment)/hapus", "Transaksi\JurnalPengeluaranKasController::destroy/$1");
 
 // Data Beban Operasional
 $routes->get("beban_operasional", "Master\BebanOperasionalController::index", ["filter" => "autentikasi"]);

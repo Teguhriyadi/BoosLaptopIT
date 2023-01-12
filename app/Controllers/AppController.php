@@ -22,6 +22,7 @@ class AppController extends BaseController
         $data["count_beban_operasional"] = $this->table->countAll("beban_operasional");
         $data["count_bagian_keuangan"] = $this->table->countAll("bagian_keuangan");
         $data["count_coa"] = $this->table->countAll("coa");
+        $data["count_users"] = $this->table->countAll("users");
         
         return view("dashboard", $data);
     }

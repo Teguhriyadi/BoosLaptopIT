@@ -20,9 +20,6 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMaster">
                     <li>
-                        <a href="<?= base_url(); ?>/coa">Coa</a>
-                    </li>
-                    <li>
                         <a href="<?= base_url(); ?>/beban_operasional">Beban Operasional</a>
                     </li>
                     <li>
@@ -36,6 +33,12 @@
                     <span class="nav-link-text">Transaksi</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseTransaksi">
+                    <li>
+                        <a href="<?= base_url(); ?>/jurnal/penerimaan">Jurnal Penerimaan Kas</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url(); ?>/jurnal/pengeluaran">Jurnal Pengeluaran Kas</a>
+                    </li>
                     <li>
                         <a href="<?= base_url(); ?>/servis_laptop">Servis Laptop</a>
                     </li>
