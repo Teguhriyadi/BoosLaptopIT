@@ -66,6 +66,10 @@ $routes->post("transaksi/pengeluaran_kas/store", "Transaksi\PengeluaranKasContro
 $routes->post("transaksi/pengeluaran_kas/(:segment)", "Transaksi\PengeluaranKasController::edit/$1", ["filter" => "autentikasi"]);
 $routes->post("transaksi/pengeluaran_kas/(:segment)/hapus", "Transaksi\PengeluaranKasController::destroy/$1", ["filter" => "autentikasi"]);
 
+// Data Rekap Laporan
+$routes->get("laporan/rekap", 'Laporan\RekapController::index', ["filter" => "autentikasi"]);
+$routes->post("laporan/rekap/cari", "Laporan\RekapController::cari", ["filter" => "autentikasi"]);
+
 // Data Beban Operasional
 $routes->get("bagian_keuangan", "Master\BagianKeuanganController::index", ["filter" => "autentikasi"]);
 $routes->post("bagian_keuangan/store", "Master\BagianKeuanganController::store", ["filter" => "autentikasi"]);

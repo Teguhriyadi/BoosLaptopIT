@@ -65,6 +65,9 @@
                     <li>
                         <a href="<?= base_url(); ?>/servis_laptop">Servis Laptop</a>
                     </li>
+                    <li>
+                        <a href="<?= base_url(); ?>/laporan/rekap">Rekap Laporan</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User">
